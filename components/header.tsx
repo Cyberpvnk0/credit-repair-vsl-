@@ -45,7 +45,7 @@ export function Header() {
 
           {/* Desktop CTA */}
           <div className="hidden md:block">
-            <Button asChild><a href="https://www.fanbasis.com/agency-checkout/evolve-credit/14v4q">Start Repair Now</a></Button>
+            <Button asChild><a href="/get-started">Start Repair Now</a></Button>
           </div>
 
           {/* Mobile menu button */}
@@ -76,7 +76,7 @@ export function Header() {
                   {link.label}
                 </Link>
               ))}
-              <Button className="mt-2 w-full" asChild><a href="https://www.fanbasis.com/agency-checkout/evolve-credit/14v4q">Start Repair Now</a></Button>
+              <Button className="mt-2 w-full" asChild><a href="/get-started">Start Repair Now</a></Button>
             </nav>
           </div>
         )}
