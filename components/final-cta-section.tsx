@@ -19,7 +19,7 @@ export function FinalCTASection() {
             className="h-12 w-full bg-white px-6 text-base font-semibold text-primary shadow-xl hover:bg-white/90 sm:h-14 sm:w-auto sm:px-8 sm:text-lg"
             asChild
           >
-            <a href="https://www.fanbasis.com/agency-checkout/evolve-credit/14v4q">
+            <a href="/get-started">
               Start Repair Now
               <ArrowRight className="ml-2 h-5 w-5" />
             </a>

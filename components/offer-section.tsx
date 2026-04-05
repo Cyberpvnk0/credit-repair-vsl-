@@ -49,7 +49,7 @@ export function OfferSection() {
             </div>
 
             <Button className="mb-6 h-11 w-full text-base font-semibold sm:mb-8 sm:h-12" variant="outline" asChild>
-              <a href="https://www.fanbasis.com/agency-checkout/evolve-credit/14v4q">
+              <a href="/get-started">
                 Get Started
                 <ArrowRight className="ml-2 h-5 w-5" />
               </a>
