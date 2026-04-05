@@ -64,7 +64,7 @@ export function HeroSection() {
 
           {/* Secondary link */}
           <a 
-            href="https://google.com" 
+            href="https://funding-vsl.vercel.app/" 
             className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline"
           >
             Already have a 680+ score? See how to get funded
