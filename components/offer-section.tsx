@@ -48,9 +48,11 @@ export function OfferSection() {
               </p>
             </div>
 
-            <Button className="mb-6 h-11 w-full text-base font-semibold sm:mb-8 sm:h-12" variant="outline">
-              Get Started
-              <ArrowRight className="ml-2 h-5 w-5" />
+            <Button className="mb-6 h-11 w-full text-base font-semibold sm:mb-8 sm:h-12" variant="outline" asChild>
+              <a href="https://www.fanbasis.com/agency-checkout/evolve-credit/14v4q">
+                Get Started
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </a>
             </Button>
 
             <ul className="space-y-3 sm:space-y-4">
@@ -88,9 +90,11 @@ export function OfferSection() {
               </p>
             </div>
 
-            <Button className="mb-6 h-11 w-full text-base font-semibold shadow-lg shadow-primary/25 sm:mb-8 sm:h-12">
-              Start Fast Track
-              <ArrowRight className="ml-2 h-5 w-5" />
+            <Button className="mb-6 h-11 w-full text-base font-semibold shadow-lg shadow-primary/25 sm:mb-8 sm:h-12" asChild>
+              <a href="https://www.fanbasis.com/agency-checkout/evolve-credit/7XBXB">
+                Start Fast Track
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </a>
             </Button>
 
             <ul className="space-y-3 sm:space-y-4">
