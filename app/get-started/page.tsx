@@ -38,7 +38,7 @@ function GetStartedForm() {
     
     // Send data to GoHighLevel webhook
     try {
-      await fetch("https://services.leadconnectorhq.com/hooks/sHcfjYFcKaywNxchTSIJ/webhook-trigger/06e14007-05e9-4a9c-80bd-63c3222c64fb", {
+      await fetch("https://services.leadconnectorhq.com/hooks/sHcfjYFcKaywNxchTSIJ/webhook-trigger/16ebf30d-bdc5-447a-bb62-160d77f3a8f8", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
