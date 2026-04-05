@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, Suspense } from "react"
 import { useSearchParams } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -14,7 +14,7 @@ const CHECKOUT_URLS = {
   "fast-track": "https://www.fanbasis.com/agency-checkout/evolve-credit/7XBXB",
 }
 
-export default function GetStartedPage() {
+function GetStartedForm() {
   const searchParams = useSearchParams()
   const plan = searchParams.get("plan") as keyof typeof CHECKOUT_URLS | null
   const checkoutUrl = plan && CHECKOUT_URLS[plan] ? CHECKOUT_URLS[plan] : CHECKOUT_URLS.standard
@@ -64,27 +64,7 @@ export default function GetStartedPage() {
   const isFormValid = formData.firstName && formData.lastName && formData.email && formData.phone
 
   return (
-    <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="border-b border-border bg-background/95 backdrop-blur">
-        <div className="container mx-auto max-w-6xl px-4">
-          <div className="flex h-16 items-center justify-center">
-            <Link href="/" className="flex items-center">
-              <Image 
-                src="/images/evolve-funding-logo.png" 
-                alt="Evolve Funding" 
-                width={180} 
-                height={48}
-                className="h-8 w-auto sm:h-10"
-                priority
-              />
-            </Link>
-          </div>
-        </div>
-      </header>
-
-      {/* Main Content */}
-      <main className="py-12 sm:py-16 lg:py-20">
+    <main className="py-12 sm:py-16 lg:py-20">
         <div className="container mx-auto max-w-lg px-4">
           {/* Card */}
           <div className="rounded-2xl border border-border bg-card p-6 shadow-xl sm:p-8">
@@ -202,6 +182,37 @@ export default function GetStartedPage() {
           </p>
         </div>
       </main>
+  )
+}
+
+export default function GetStartedPage() {
+  return (
+    <div className="min-h-screen bg-background">
+      {/* Header */}
+      <header className="border-b border-border bg-background/95 backdrop-blur">
+        <div className="container mx-auto max-w-6xl px-4">
+          <div className="flex h-16 items-center justify-center">
+            <Link href="/" className="flex items-center">
+              <Image 
+                src="/images/evolve-funding-logo.png" 
+                alt="Evolve Funding" 
+                width={180} 
+                height={48}
+                className="h-8 w-auto sm:h-10"
+                priority
+              />
+            </Link>
+          </div>
+        </div>
+      </header>
+
+      <Suspense fallback={
+        <div className="flex min-h-[60vh] items-center justify-center">
+          <div className="text-muted-foreground">Loading...</div>
+        </div>
+      }>
+        <GetStartedForm />
+      </Suspense>
     </div>
   )
 }
