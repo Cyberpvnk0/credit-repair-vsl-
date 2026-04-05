@@ -32,14 +32,33 @@ export default function GetStartedPage() {
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
     
+    // Send data to GoHighLevel webhook
+    try {
+      await fetch("https://services.leadconnectorhq.com/hooks/sHcfjYFcKaywNxchTSIJ/webhook-trigger/06e14007-05e9-4a9c-80bd-63c3222c64fb", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          email: formData.email,
+          phone: formData.phone,
+          plan: plan || "standard",
+        }),
+        mode: "no-cors", // GHL may not support CORS
+      })
+    } catch (error) {
+      // Continue to checkout even if webhook fails
+      console.error("Webhook error:", error)
+    }
+    
     // Redirect to the appropriate checkout based on plan
-    setTimeout(() => {
-      window.location.href = checkoutUrl
-    }, 500)
+    window.location.href = checkoutUrl
   }
 
   const isFormValid = formData.firstName && formData.lastName && formData.email && formData.phone
