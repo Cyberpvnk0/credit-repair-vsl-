@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { useSearchParams } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -8,7 +9,16 @@ import { ArrowRight, Shield, CheckCircle2 } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 
+const CHECKOUT_URLS = {
+  standard: "https://www.fanbasis.com/agency-checkout/evolve-credit/14v4q",
+  "fast-track": "https://www.fanbasis.com/agency-checkout/evolve-credit/7XBXB",
+}
+
 export default function GetStartedPage() {
+  const searchParams = useSearchParams()
+  const plan = searchParams.get("plan") as keyof typeof CHECKOUT_URLS | null
+  const checkoutUrl = plan && CHECKOUT_URLS[plan] ? CHECKOUT_URLS[plan] : CHECKOUT_URLS.standard
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -26,9 +36,9 @@ export default function GetStartedPage() {
     e.preventDefault()
     setIsSubmitting(true)
     
-    // Redirect to checkout after a brief moment
+    // Redirect to the appropriate checkout based on plan
     setTimeout(() => {
-      window.location.href = "https://www.fanbasis.com/agency-checkout/evolve-credit/14v4q"
+      window.location.href = checkoutUrl
     }, 500)
   }
 
