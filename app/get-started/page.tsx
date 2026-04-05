@@ -36,9 +36,9 @@ function GetStartedForm() {
     e.preventDefault()
     setIsSubmitting(true)
     
-    // Send data to GoHighLevel webhook
+    // Send data to our API route which forwards to GoHighLevel
     try {
-      await fetch("https://services.leadconnectorhq.com/hooks/sHcfjYFcKaywNxchTSIJ/webhook-trigger/16ebf30d-bdc5-447a-bb62-160d77f3a8f8", {
+      await fetch("/api/lead-webhook", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -50,7 +50,6 @@ function GetStartedForm() {
           phone: formData.phone,
           plan: plan || "standard",
         }),
-        mode: "no-cors", // GHL may not support CORS
       })
     } catch (error) {
       // Continue to checkout even if webhook fails
