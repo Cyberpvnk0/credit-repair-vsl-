@@ -54,8 +54,8 @@ export function HeroSection() {
                 muted
                 loop
               >
-                <source src="https://wtmybw1lfshqhpvx.public.blob.vercel-storage.com/0404%20%283%29%287%29.mov" type="video/quicktime" />
-                <source src="https://wtmybw1lfshqhpvx.public.blob.vercel-storage.com/0404%20%283%29%287%29.mov" type="video/mp4" />
+                <source src="https://wtmybw1lfshqhpvx.public.blob.vercel-storage.com/0404%20%283%29%287%29%20%281%29.mov" type="video/quicktime" />
+                <source src="https://wtmybw1lfshqhpvx.public.blob.vercel-storage.com/0404%20%283%29%287%29%20%281%29.mov" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
               
