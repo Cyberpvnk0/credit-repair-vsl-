@@ -1,9 +1,20 @@
 "use client"
 
+import { useState, useRef } from "react"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Play } from "lucide-react"
+import { ArrowRight, VolumeX } from "lucide-react"
 
 export function HeroSection() {
+  const [isMuted, setIsMuted] = useState(true)
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  const handleUnmute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = false
+      setIsMuted(false)
+    }
+  }
+
   return (
     <section className="relative overflow-hidden bg-background py-12 sm:py-20 lg:py-32">
       {/* Subtle background gradient */}
@@ -31,21 +42,36 @@ export function HeroSection() {
             and optimizes your credit profile — so you can finally get approved.
           </p>
 
-          {/* VSL Video Placeholder */}
+          {/* VSL Video */}
           <div className="mt-8 w-full max-w-3xl sm:mt-10">
             <div className="relative aspect-video overflow-hidden rounded-xl border border-border bg-card shadow-xl sm:rounded-2xl">
-              <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary/10 to-primary/5">
-                <button 
-                  className="group flex h-14 w-14 items-center justify-center rounded-full bg-primary shadow-lg transition-transform hover:scale-105 sm:h-20 sm:w-20"
-                  aria-label="Play video"
+              <video 
+                ref={videoRef}
+                className="h-full w-full object-cover"
+                controls
+                playsInline
+                autoPlay
+                muted
+                loop
+              >
+                <source src="https://wtmybw1lfshqhpvx.public.blob.vercel-storage.com/0404%20%283%29%287%29%20%281%29.mov" type="video/quicktime" />
+                <source src="https://wtmybw1lfshqhpvx.public.blob.vercel-storage.com/0404%20%283%29%287%29%20%281%29.mov" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              
+              {/* Unmute Button Overlay */}
+              {isMuted && (
+                <button
+                  onClick={handleUnmute}
+                  className="absolute inset-0 flex items-center justify-center bg-black/30 transition-opacity hover:bg-black/40"
+                  aria-label="Unmute video"
                 >
-                  <Play className="h-6 w-6 fill-primary-foreground text-primary-foreground transition-transform group-hover:scale-110 sm:h-8 sm:w-8" />
+                  <div className="flex items-center gap-3 rounded-full bg-primary px-6 py-4 text-lg font-semibold text-primary-foreground shadow-lg transition-transform hover:scale-105 sm:px-8 sm:py-5 sm:text-xl">
+                    <VolumeX className="h-6 w-6 sm:h-7 sm:w-7" />
+                    UNMUTE
+                  </div>
                 </button>
-              </div>
-              <div className="absolute bottom-2 left-2 right-2 flex items-center justify-between rounded-lg bg-card/90 px-3 py-2 backdrop-blur-sm sm:bottom-4 sm:left-4 sm:right-4 sm:px-4 sm:py-3">
-                <span className="text-xs font-medium text-foreground sm:text-sm">Watch: How We Fix Your Credit in 90 Days</span>
-                <span className="text-xs text-muted-foreground">3:24</span>
-              </div>
+              )}
             </div>
           </div>
 
