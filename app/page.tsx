@@ -8,11 +8,13 @@ import { QualificationForm } from "@/components/qualification-form"
 import { FAQSection } from "@/components/faq-section"
 import { FinalCTASection } from "@/components/final-cta-section"
 import { Footer } from "@/components/footer"
+import { SocialProofNotification } from "@/components/social-proof-notification"
 
 export default function CreditRepairLanding() {
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
+      <SocialProofNotification />
       <main>
         <HeroSection />
         <ProblemSection />
