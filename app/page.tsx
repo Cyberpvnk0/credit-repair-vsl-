@@ -3,7 +3,7 @@ import { HeroSection } from "@/components/hero-section"
 import { ProblemSection } from "@/components/problem-section"
 import { SolutionSection } from "@/components/solution-section"
 import { ProofSection } from "@/components/proof-section"
-import { OfferSection } from "@/components/offer-section"
+
 import { QualificationForm } from "@/components/qualification-form"
 import { FAQSection } from "@/components/faq-section"
 import { FinalCTASection } from "@/components/final-cta-section"
@@ -20,7 +20,6 @@ export default function CreditRepairLanding() {
         <ProblemSection />
         <SolutionSection />
         <ProofSection />
-        <OfferSection />
         <QualificationForm />
         <FAQSection />
         <FinalCTASection />

@@ -7,8 +7,8 @@ import Image from "next/image"
 import { useState } from "react"
 
 const navLinks = [
-  { href: "#pricing", label: "Pricing" },
   { href: "#qualify", label: "Get Started" },
+  { href: "#faq", label: "FAQ" },
 ]
 
 export function Header() {
