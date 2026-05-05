@@ -26,10 +26,6 @@ export function FinalCTASection() {
           </Button>
         </div>
 
-        <p className="mt-4 text-xs text-primary-foreground/70 sm:text-sm">
-          $97/month • No contracts • Cancel anytime
-        </p>
-
         <div className="mt-8 flex flex-col items-center justify-center gap-4 text-primary-foreground/80 sm:mt-12 sm:flex-row sm:flex-wrap sm:gap-6 md:gap-8">
           <div className="flex items-center gap-2">
             <Shield className="h-4 w-4 sm:h-5 sm:w-5" />
