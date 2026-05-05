@@ -27,7 +27,7 @@ export function FinalCTASection() {
         </div>
 
         <p className="mt-4 text-xs text-primary-foreground/70 sm:text-sm">
-          $97/month • No contracts • Cancel anytime
+          Refund If No Results • No Contracts • Cancel Anytime
         </p>
 
         <div className="mt-8 flex flex-col items-center justify-center gap-4 text-primary-foreground/80 sm:mt-12 sm:flex-row sm:flex-wrap sm:gap-6 md:gap-8">

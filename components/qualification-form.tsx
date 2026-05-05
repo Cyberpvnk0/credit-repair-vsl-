@@ -95,12 +95,12 @@ export function QualificationForm() {
             <Button 
               size="lg" 
               className="h-12 w-full px-6 text-base font-semibold shadow-lg shadow-primary/25 sm:h-14 sm:w-auto sm:px-8 sm:text-lg"
-              onClick={() => {
-                document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })
-              }}
+              asChild
             >
-              Continue to Checkout
-              <ArrowRight className="ml-2 h-5 w-5" />
+              <a href="/get-started">
+                Continue to Checkout
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </a>
             </Button>
           </div>
         </div>
