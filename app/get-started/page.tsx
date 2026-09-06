@@ -10,8 +10,8 @@ import Link from "next/link"
 import Image from "next/image"
 
 const CHECKOUT_URLS = {
-  standard: "https://www.fanbasis.com/agency-checkout/evolve-credit/14v4q",
-  "fast-track": "https://www.fanbasis.com/agency-checkout/evolve-credit/7XBXB",
+  standard: "https://commas.com/checkout/4k56JtgIE4CuwMSh",
+  "fast-track": "https://commas.com/checkout/4k56JtgIE4CuwMSh",
 }
 
 function GetStartedForm() {
